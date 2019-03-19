@@ -1,0 +1,35 @@
+<div class = 'container' align = 'left'><h3>Welcome </h3>
+
+  <table class="table table-striped">
+
+    <thead>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Model</th>
+      </thead>
+    <tr *ngFor="let u of users">
+      <td>
+        {{u.id}}&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td>
+         {{u.name}}&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td>
+         {{u.model}}&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+
+      <td>
+
+        <button class='btn btn-success'(click)='productdetails(u.id)'> Details</button>
+
+      </td>
+    </tr>
+  </table></div>
+<div>
+
+  <div *ngIf='showDetails'>
+    <app-details [id]= 'selectedid' (showProduct)= "show($event)"></app-details>
+
+  </div>
+<!-- 
+  {{loginForm.form.value.Name}} -->
